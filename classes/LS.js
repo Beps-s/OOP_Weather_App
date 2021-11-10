@@ -1,8 +1,9 @@
 class LS {
 	constructor(){
 		this.city;
-		this.defaultCity = 'Tartu';
+		this.defaultCity = 'Tallinn';
 	}
+
 	getLocationData(){
 		if(localStorage.getItem('city') === null){
 			this.city = this.defaultCity;
@@ -10,5 +11,9 @@ class LS {
 			this.city = localStorage.getItem('city');
 		}
 		return this.city;
+	}
+
+	setLocationData(city){
+		localStorage.setItem('city', city)
 	}
 }
